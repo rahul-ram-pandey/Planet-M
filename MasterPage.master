@@ -1,0 +1,277 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    
+    
+    </asp:ContentPlaceHolder>
+    <style>
+	/* Reset */
+.menu,
+.menu ul,
+.menu li,
+.menu a {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+/* Menu */
+.menu {	
+	height: 40px;
+	width: 658px;
+
+	background: #4c4e5a;
+	background: -webkit-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -moz-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -o-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -ms-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: #4c4e5a;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.menu li {
+	position: relative;
+	list-style: none;
+	float: left;
+	display: block;
+	height: 40px;
+            top: 0px;
+            left: 0px;
+            width: 131px;
+        }
+
+/* Links */
+
+.menu li a {
+	display: block;
+	padding: 0 14px;
+	margin: 6px 0;
+	line-height: 28px;
+	text-decoration: none;
+	
+	border-left: 1px solid #393942;
+	border-right: 1px solid #4f5058;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+
+	color: #f3f3f3;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
+}
+
+.menu li:first-child a { border-left: none;}
+.menu li:last-child a{ border-right: none; }
+
+.menu li:hover > a { color: #8fde62; }
+
+/* Sub Menu */
+
+.menu ul {
+	position: absolute;
+	top: 40px;
+	left: 0;
+    
+	opacity: 0;
+	
+	background: #1f2024;
+
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+
+	-webkit-transition: opacity .25s ease .1s;
+	-moz-transition: opacity .25s ease .1s;
+	-o-transition: opacity .25s ease .1s;
+	-ms-transition: opacity .25s ease .1s;
+	transition: opacity .25s ease .1s;
+}
+
+.menu li:hover > ul { opacity: 1; }
+
+.menu ul li {
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+
+	-webkit-transition: height .25s ease .1s;
+	-moz-transition: height .25s ease .1s;
+	-o-transition: height .25s ease .1s;
+	-ms-transition: height .25s ease .1s;
+	transition: height .25s ease .1s;
+	z-index:999;
+}
+
+.menu li:hover > ul li {
+	height: 36px;
+	overflow: visible;
+	
+	padding: 0;
+}
+
+.menu ul li a {
+	width: 91px;
+	padding: 4px 0 4px 0px;
+	margin: 0;
+	border: none;
+	border-bottom: 1px solid #353539;
+}
+
+.menu ul li:last-child a { border: none; }
+
+	    .style1
+        {
+            height: 71px;
+        }
+
+	    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align=center style="height: 1313px; width: 1231px;  margin-right: 0px; background-color: #999999; background-image: url('/C:/Users/ACER/Documents/Visual Studio 2008/WebSites/planetm/texture.jpg');">
+        <table style="margin-left: 52px; margin-right: 0px; top: 15px; left: 10px; width: 932px; height: 452px;" 
+            frame="box" align="left" >
+            <tr>
+                <td style="background-color: #333333">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label 
+                        ID="Label1" runat="server" ForeColor="Lime"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    &nbsp;
+                   
+                    <asp:ImageButton 
+                        ID="ImageButton1" runat="server" Height="53px" ImageUrl="~/viewcart.png" 
+                        style="margin-top: 0px; margin-left: 0px;" Width="115px" 
+                        ImageAlign="Middle" PostBackUrl="~/cartdetails.aspx?c=1" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:HyperLink ID="hplogin" runat="server" NavigateUrl="~/Login.aspx" 
+                        ForeColor="White" Font-Names="Cambria">Login</asp:HyperLink>
+                        &nbsp;&nbsp;&nbsp;
+                    <asp:HyperLink ID="hpreg" runat="server" NavigateUrl="~/Register.aspx" 
+                        ForeColor="White" Font-Names="Cambria">Register</asp:HyperLink>
+                        &nbsp;&nbsp;<asp:HyperLink ID="hplogout" runat="server" 
+                        NavigateUrl="~/Login.aspx?log=1" ForeColor="White" 
+                        Font-Names="Cambria" Visible="False">Logout</asp:HyperLink>
+                    </td>
+            </tr>
+            <tr>
+                <td 
+                    
+                    style="background-color: whitesmoke; background-image: none; background-repeat: no-repeat;" align=center 
+                    bgcolor="whitesmoke">
+                    &nbsp;<a href="home.aspx"><asp:Image ID="Image1" runat="server" 
+                        BorderStyle="Solid" Height="194px" 
+                        ImageUrl="~/planetm.jpg" 
+                        style="margin-left: 0px; margin-right: 6px; margin-top: 0px" 
+                        Width="182px"  /></a>
+                &nbsp;</td>
+            </tr>
+<tr>
+                <td style="background-color:#333333" class="style1" align=center>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="lbladmin" runat="server" ForeColor="White" Text="Admin:"></asp:Label>
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
+                        Height="21px" Width="88px">
+                        <asp:ListItem>-- select one --</asp:ListItem>
+                        <asp:ListItem>Books</asp:ListItem>
+                        <asp:ListItem>Mobiles</asp:ListItem>
+                        <asp:ListItem>Audios</asp:ListItem>
+                        <asp:ListItem>Videos</asp:ListItem>
+                        <asp:ListItem>Employees</asp:ListItem>
+                        <asp:ListItem>Suppliers</asp:ListItem>
+                        <asp:ListItem>Order details</asp:ListItem>
+                        <asp:ListItem>feedback</asp:ListItem>
+                    </asp:DropDownList>
+&nbsp;
+       <ul class="menu">
+
+	<li><a href="home.aspx">Home</a></li>
+	<li><a>Music</a>
+	<ul style="azimuth:center">
+			<li><a href="viewaudios.aspx?cdcategory=pre-orders" class="documents">Pre-orders</a></li>
+			<li><a href="viewaudios.aspx?cdcategory=new releases" class="messages">New Releases</a></li>
+			<li><a href="viewaudios.aspx?cdcategory=devotional" class="signout">Devotional</a></li>
+			<li><a href="viewaudios.aspx?cdcategory=bollywood retro" class="signout">Bollywood</a></li>
+		</ul></li>
+	<li><a>Videos</a>
+
+		<ul>
+			<li><a href="viewvideos.aspx?cdcategories=pre-orders" class="documents">Pre-orders</a></li>
+			<li><a href="viewvideos.aspx?cdcategories=new releases" class="messages">New Releases</a></li>
+			<li><a href="viewvideos.aspx?cdcategories=hindi movies" class="signout">Hindi Movies</a></li>
+			<li><a href="viewvideos.aspx?cdcategories=english movies" class="signout">Hollywood</a></li>
+		</ul>
+
+	</li>
+	<li><a>Books</a>
+	<ul>
+			<li><a href="viewbooks.aspx?Category=bestseller" class="documents">Bestsellers</a></li>
+			<li><a href="viewbooks.aspx?Category=fiction" class="messages">Fiction</a></li>
+			<li><a href="viewbooks.aspx?Category=non-fiction" class="signout">Non-Fiction</a></li>
+			<li><a href="viewbooks.aspx?Category=boxcollection" class="signout">Box-collection</a></li>
+		</ul></li>
+	<li><a>Handsets</a>
+	<ul>
+			<li><a href="viewhandsets.aspx?Category=Nokia" class="documents">Nokia</a></li>
+			<li><a href="viewhandsets.aspx?Category=HTC" class="messages">HTC</a></li>
+			<li><a href="viewhandsets.aspx?Category=Sony" class="signout">Sony</a></li>
+			<li><a href="viewhandsets.aspx?Category=Samsung" class="signout">Samsung</a></li>
+		</ul>
+	</li>
+
+</ul> <!-- end .menu -->
+
+                    </td>
+            </tr>
+
+
+<tr>
+                <td></td>
+            </tr>
+            <tr>
+             
+                <td class="style13" bgcolor="White" style="background-color: #FFFFFF">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="style15" 
+                    style="background-color: #333333; color: #FFFFFF;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    &nbsp;Copyright © 2014 planetm.com&nbsp;&nbsp;&nbsp; 
+                    <br />
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:HyperLink ID="HyperLink19" runat="server" ForeColor="White" 
+                        NavigateUrl="~/aboutus.aspx">About Us</asp:HyperLink>
+                    &nbsp;&nbsp;
+                    <asp:HyperLink ID="HyperLink20" runat="server" ForeColor="White" 
+                        NavigateUrl="~/contactus.aspx">Contact Us</asp:HyperLink>
+                    &nbsp;&nbsp;
+                    <asp:HyperLink ID="HyperLink21" runat="server" ForeColor="White" 
+                        NavigateUrl="~/feedback.aspx">Feedback</asp:HyperLink>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    </tr>
+            </table>
+    </div>
+    </form> 
+</body>
+</html>
